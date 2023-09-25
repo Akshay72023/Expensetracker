@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Tracker</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-image: url('data:image/jpeg;base64,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');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <h1>Expense Tracker</h1>
+    <section class="container">
+        <form id="my-form" >
+            <div class="form-group">
+                <label for="expenseAmount" class="form-label">Choose Expense Amount:</label>
+                <input type="number" class="form-control" id="expenseAmount" >
+            </div>
+            <div class="form-group">
+                <label for="expenseDescription"  class="form-label">Choose Description:</label>
+                <input type="text" class="form-control" id="expenseDescription" >
+            </div>
+            <div class="form-group">
+                <label for="expenseCategory">Choose a Category:</label>
+                <select class="form-control" id="expenseCategory">
+                    <option value="food">Food</option>
+                    <option value="fuel">Fuel</option>
+                    <option value="movie">Movie</option>
+                    <option value="electricity">Electricity</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary">Add Expense</button>
+        </form>
+        <ul id="users"></ul>
+        <ul class="items"></ul>
+    </section>
+    <script src="expensetracker.js"></script>
+</body>
+</html>
