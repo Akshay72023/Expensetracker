@@ -1,29 +1,29 @@
 const myForm = document.querySelector('#my-form');
 myForm.addEventListener('submit', onSubmit);
-function onSubmit(e) {
-    e.preventDefault();
-    const candyname=e.target.Candyname.value;
-    const desc=e.target.Description.value;
-    const price=e.target.Price.value;
-    const quanity=e.target.Quantity.value;
-    let myobject={
-        candyname,
-        desc,
-        price,
-        quanity
-    };
-    axios
-    .post('https://crudcrud.com/api/896f3abd6cdb4ecab4e50e767a58d20a/candyshop',myobject)
-    .then((response)=>{
-        showUserDetails(response.data);
-    })
-    .catch(err=>{
-        document.body.innerHTML=document.body.innerHTML + "<h4 style='text-align: center;'> Something went wrong </h4>"
-        console.log(err);
-      })
+    function onSubmit(e) {
+        e.preventDefault();
+        const candyname=e.target.Candyname.value;
+        const desc=e.target.Description.value;
+        const price=e.target.Price.value;
+        const quanity=e.target.Quantity.value;
+        let myobject={
+            candyname,
+            desc,
+            price,
+            quanity
+        };
+        axios
+        .post('https://crudcrud.com/api/43c851235b9648b8b9cfb07c66717b76/candyshop',myobject)
+        .then((response)=>{
+            showUserDetails(response.data);
+        })
+        .catch(err=>{
+            document.body.innerHTML=document.body.innerHTML + "<h4 style='text-align: center;'> Something went wrong </h4>"
+            console.log(err);
+        })
 }
 window.addEventListener("DOMContentLoaded",()=>{
-    axios.get("https://crudcrud.com/api/896f3abd6cdb4ecab4e50e767a58d20a/candyshop")
+    axios.get("https://crudcrud.com/api/43c851235b9648b8b9cfb07c66717b76/candyshop")
           .then((response)=>{
                 for(var i=0;i<response.data.length;i++){
                   showUserDetails(response.data[i])
@@ -35,7 +35,7 @@ window.addEventListener("DOMContentLoaded",()=>{
 })
 
 
-function showUserDetails(user){
+ function showUserDetails(user){
     const parentEle=document.querySelector('.items');
     const childEle=`<li id=${user._id}> ${user.candyname}-${user.desc}-${user.price}-${user.quanity}
     <button onclick=buy1('${user._id}','${user.candyname}','${user.desc}','${user.price}','${user.quanity}')>Buy1</button>
@@ -46,7 +46,7 @@ function showUserDetails(user){
 }
 
 function deleteUser(userid){
-    axios.delete(`https://crudcrud.com/api/896f3abd6cdb4ecab4e50e767a58d20a/candyshop/${userid}`)
+    axios.delete(`https://crudcrud.com/api/43c851235b9648b8b9cfb07c66717b76/candyshop/${userid}`)
     .then(response=>{
       removeUserFromScreen(userid)
     })
@@ -121,3 +121,5 @@ function removeUserFromScreen(userid){
     }
     
  }
+
+ 
